@@ -38,7 +38,7 @@
 - **Organic Tilts**: Subtle organic angles that respond dynamically on hover and touch.
 
 ### 🎬 Scene 4: Welcome Video
-- **Full-Screen Video**: `wellcome.mp4` plays after the polaroid scene and automatically advances to the birthday wishes page when it ends.
+- **Full-Screen Video**: `wellcome.mp4` preloads ahead of playback, plays after the polaroid scene, and automatically advances to the birthday wishes page when it ends.
 
 ### 🎈 Scene 5: Helium Balloons & Birthday Wishes Checklist
 - **Quilted Diamond Backdrop**: Elegant quilted scrapbook lattice texture.

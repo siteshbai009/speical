@@ -185,12 +185,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const page6 = document.getElementById('page-6');
   const page7 = document.getElementById('page-7');
   const welcomeVideo = document.getElementById('welcomeVideo');
+  const welcomeVideoLoading = document.getElementById('welcomeVideoLoading');
+  const welcomeVideoStatus = document.getElementById('welcomeVideoStatus');
   const lastWishVideo = document.querySelector('.last-wish-video');
   const toPage2Btn = document.getElementById('toPage2Btn');
   const toPage3Btn = document.getElementById('toPage3Btn');
   const toPage4Btn = document.getElementById('toPage4Btn');
   const toPage6Btn = document.getElementById('toPage6Btn');
   const toPage7Btn = document.getElementById('toPage7Btn');
+
+  const showWelcomeVideoStatus = (message, hasError = false) => {
+    if (!welcomeVideoLoading || !welcomeVideoStatus) return;
+    welcomeVideoStatus.textContent = message;
+    welcomeVideoLoading.classList.toggle('has-error', hasError);
+    welcomeVideoLoading.hidden = false;
+  };
+
+  const hideWelcomeVideoStatus = () => {
+    if (welcomeVideoLoading) welcomeVideoLoading.hidden = true;
+  };
+
+  if (welcomeVideo) {
+    welcomeVideo.addEventListener('waiting', () => {
+      showWelcomeVideoStatus('Loading your birthday surprise...');
+    });
+    welcomeVideo.addEventListener('playing', hideWelcomeVideoStatus);
+    welcomeVideo.addEventListener('error', () => {
+      showWelcomeVideoStatus('The video could not load. Check your connection and reload the page.', true);
+    });
+  }
 
   // Universal Page Entrance Animation Trigger
   const triggerPageAnimations = (pageElement) => {
@@ -253,10 +276,17 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerPageAnimations(page4);
       }
       if (audio) audio.pause();
+      if (backgroundSong) backgroundSong.pause();
       if (lastWishVideo) lastWishVideo.pause();
       if (welcomeVideo) {
         welcomeVideo.currentTime = 0;
+        if (welcomeVideo.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+          showWelcomeVideoStatus('Loading your birthday surprise...');
+        }
         welcomeVideo.play().catch((err) => {
+          if (err.name !== 'AbortError') {
+            showWelcomeVideoStatus('The video could not start. Check your connection and reload the page.', true);
+          }
           console.warn('Unable to play the welcome video:', err);
         });
       }
