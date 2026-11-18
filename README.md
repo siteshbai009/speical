@@ -116,14 +116,7 @@ No build tools, bundlers, or package managers required. Simply clone and open:
 
 3. **Enjoy the celebration!** 🎉
 
----
 
-## 👤 Author
-
-Crafted with care and creativity by **Saklin**:
-
-- **GitHub**: [@saklincodes](https://github.com/saklincodes)
-- **Instagram**: [@saklin_01](https://instagram.com/saklin_01)
 
 Feel free to connect, star ⭐ the repo if you like this project, or reach out!
 
