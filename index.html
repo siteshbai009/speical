@@ -72,14 +72,14 @@
       <div class="gif-frame-wrapper">
         <div class="frame-tape"></div>
         <div class="gif-polaroid">
-          <img src="assets/birthday-cat.gif" alt="Happy Birthday Sweet Cat" class="birthday-gif">
+          <img src="assets/birthday-cat.gif" alt="Happy Birthday Sweet Cat" class="birthday-gif" loading="eager" decoding="async" fetchpriority="high">
           <span class="polaroid-caption">sweet day ♡</span>
         </div>
       </div>
 
       <!-- Audio Element -->
-      <audio id="audioPlayer" src="assets/Happy Birthday Song 🎂.mp3" preload="auto"></audio>
-      <audio id="backgroundSong" src="assets/songbdy.mp3" preload="auto" loop></audio>
+      <audio id="audioPlayer" src="assets/Happy Birthday Song 🎂.mp3" preload="none"></audio>
+      <audio id="backgroundSong" src="assets/songbdy.mp3" preload="none" loop></audio>
 
       <!-- Music Player Widget -->
       <div class="music-player">
@@ -177,7 +177,7 @@
         
         <div class="kawaii-cake-card">
           <div class="cake-tape" aria-hidden="true"></div>
-          <img src="assets/kawaii-cake.gif" alt="Happy Birthday Kawaii Cake" class="kawaii-cake-img">
+          <img src="assets/kawaii-cake.gif" alt="Happy Birthday Kawaii Cake" class="kawaii-cake-img" loading="lazy" decoding="async">
           <span class="cake-card-caption">happy sweet day ♡</span>
         </div>
 
@@ -256,7 +256,7 @@
               </div>
 
               <div class="photo-frame-outer">
-                <img src="assets/marin-1.jpg" alt="Marin Kitagawa Smile" class="girl-photo">
+                <img src="assets/marin-1.jpg" alt="Marin Kitagawa Smile" class="girl-photo" loading="lazy" decoding="async">
               </div>
 
               <div class="card-footer-mini">
@@ -286,7 +286,7 @@
             <div class="polaroid-side polaroid-front">
               <span class="doodle-top-accent" aria-hidden="true">✦</span>
               <div class="photo-frame-outer">
-                <img src="assets/marin-2.jpg" alt="Marin Kitagawa Peace Sign" class="girl-photo">
+                <img src="assets/marin-2.jpg" alt="Marin Kitagawa Peace Sign" class="girl-photo" loading="lazy" decoding="async">
               </div>
 
               <div class="card-footer-mini">
@@ -316,7 +316,7 @@
             <div class="polaroid-side polaroid-front">
               <span class="doodle-top-accent" aria-hidden="true">♡</span>
               <div class="photo-frame-outer">
-                <img src="assets/marin-3.jpg" alt="Marin Kitagawa Blushing Smile" class="girl-photo">
+                <img src="assets/marin-3.jpg" alt="Marin Kitagawa Blushing Smile" class="girl-photo" loading="lazy" decoding="async">
               </div>
 
               <div class="card-footer-mini">
@@ -349,7 +349,7 @@
 
     <!-- Page 4: Full-Screen Welcome Video -->
     <section class="card-page welcome-page hidden" id="page-4">
-      <video class="welcome-video" id="welcomeVideo" playsinline preload="auto" aria-label="Welcome video">
+      <video class="welcome-video" id="welcomeVideo" playsinline preload="none" aria-label="Welcome video">
         <source src="assets/wellcome.mp4" type="video/mp4">
         Your browser does not support video playback.
       </video>
@@ -461,7 +461,7 @@
 
               <!-- Animated Cute Clapping Bunny GIF -->
               <div class="bunny-gif-container" id="bunnyGifContainer" title="Click for extra love ♡">
-                <img src="assets/cute-bunny.gif" alt="Cute Clapping Birthday Bunny" class="bunny-gif-img">
+                <img src="assets/cute-bunny.gif" alt="Cute Clapping Birthday Bunny" class="bunny-gif-img" loading="lazy" decoding="async">
               </div>
 
               <!-- Pinned Awesome Memo Note (Direct Match with Mockup) -->
@@ -667,7 +667,7 @@
             <!-- Grand Celebration Birthday Cake GIF (from Giphy) -->
             <div class="unboxed-mascot-wrap">
               <span class="mascot-crown-float" aria-hidden="true">👑</span>
-              <img src="assets/celebration-cake.gif" alt="Happy Birthday Celebration Cake" class="unboxed-cake-gif" id="celebrationCakeGif">
+              <img src="assets/celebration-cake.gif" alt="Happy Birthday Celebration Cake" class="unboxed-cake-gif" id="celebrationCakeGif" loading="lazy" decoding="async">
             </div>
 
             <!-- Grand Birthday Queen Trophy Card -->
@@ -714,7 +714,7 @@
         <p>A little something special for you ✨</p>
       </header>
 
-      <video class="last-wish-video" controls playsinline preload="metadata">
+      <video class="last-wish-video" controls playsinline preload="none">
         <source src="assets/lastwish.mp4" type="video/mp4">
         Your browser does not support video playback.
       </video>

@@ -65,6 +65,7 @@ Built from the ground up without heavy frameworks (zero React, zero Tailwind, ze
 - **Batch DOM Injection (`DocumentFragment`)**: Fireworks sparks, confetti flakes, and streamers are batched off-DOM in memory and committed in a single composite paint.
 - **GPU Hardware Acceleration**: Heavy transformations leverage `translate3d(..., 0)` and `transform: scale(...)` to delegate animation layers directly to the GPU compositor thread.
 - **Fluid Dynamic Scaling**: Elements and navigation buttons fluidly scale using CSS `clamp()` and viewport units (`vw` / `vh`) to look sharp across mobile, tablet, and widescreen desktop monitors.
+- **Deferred Media Loading**: Off-screen images load lazily and decode asynchronously. Audio and video use `preload="none"` so large files are requested only for playback; automatic opening-song playback is skipped when the browser reports a slow or data-saving connection.
 
 ---
 

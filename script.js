@@ -160,8 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.removeEventListener('keydown', startAfterBlockedAutoplay);
   }, { once: true });
 
-  // Start after 2 seconds; if autoplay is blocked, retry on user interaction.
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const isSlowConnection = connection && (
+    connection.saveData || /^(slow-2g|2g|3g)$/.test(connection.effectiveType || '')
+  );
+
+  // Avoid downloading the large opening track automatically on slow/data-saving connections.
   window.setTimeout(() => {
+    if (isSlowConnection) return;
     if (!audio.paused) return;
 
     audio.play().catch((err) => {
@@ -253,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerPageAnimations(page4);
       }
       if (audio) audio.pause();
+      if (backgroundSong) backgroundSong.pause();
       if (lastWishVideo) lastWishVideo.pause();
       if (welcomeVideo) {
         welcomeVideo.currentTime = 0;
